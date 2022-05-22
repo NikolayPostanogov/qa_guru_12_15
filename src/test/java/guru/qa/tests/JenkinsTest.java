@@ -1,6 +1,8 @@
 package guru.qa.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import guru.qa.pages.RegistrationFormPage;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -38,6 +40,8 @@ public class JenkinsTest {
                    String hobby,
                    String state,
                    String city) {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         String expectedFullName = format("%s %s", firstName, lastName);
         String expectedBirthDate = format("%s %s,%s", day, month, year);
         String expectedStateAndCity = format("%s %s", state, city);
