@@ -24,7 +24,9 @@ allure {
 dependencies {
     testImplementation(
             "org.junit.jupiter:junit-jupiter:5.8.2",
-            "org.slf4j:slf4j-simple:1.7.36"
+            "org.slf4j:slf4j-simple:1.7.36",
+            "com.codeborne:selenide:6.4.0",
+            "io.qameta.allure:allure-selenide:2.17.3"
     )
 }
 
@@ -40,5 +42,11 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task demoqa_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "demoqa"
     }
 }
