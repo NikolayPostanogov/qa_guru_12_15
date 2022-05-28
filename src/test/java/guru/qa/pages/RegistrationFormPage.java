@@ -112,7 +112,7 @@ public class RegistrationFormPage {
     }
 
     @Step("Нажимаем submit")
-    public RegistrationFormPage clickSubmit() {
+    public RegistrationFormPage  clickSubmit() {
         $("#submit").click();
 
         return this;
