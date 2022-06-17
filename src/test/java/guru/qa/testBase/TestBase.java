@@ -16,8 +16,8 @@ public class TestBase {
     static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
     @BeforeAll
     static void setUp() {
-/*        String login = config.login();
-        String password = config.password();*/
+        String login = config.login();
+        String password = config.password();
 
         SelenideLogger.addListener("allure", new AllureSelenide());
 
@@ -25,8 +25,7 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub");
-        //Configuration.remote = "https://" + login + ":" + password + "@" + url;
-        Configuration.remote = "https://user1:1234@" + url;
+        Configuration.remote = "https://" + login + ":" + password + "@" + url;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
