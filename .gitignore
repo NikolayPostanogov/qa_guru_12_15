@@ -49,3 +49,5 @@ bin/
 /settings.gradle
 /.idea/vcs.xml
 /.idea/workspace.xml
+/src/test/resources/config/credentials.properties
+/.idea/.gitignore
